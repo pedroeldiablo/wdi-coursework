@@ -1,8 +1,8 @@
-# WDI 21 Student Homework Repository
+# WDI 23 Student Homework Repository
 
 Welcome to the GA London WDI 21 student homework repository. This is the place we are going to monitor the completion of your homework.
 
-## Setup 
+## Setup
 
 ### Step 1. Fork the repository
 
