@@ -1,0 +1,41 @@
+#answer {
+  height:30px;
+  width: 100px;
+  background-color: red;
+}
+
+#form {
+  box-sizing: border-box;
+    font-family: Helvetica, arial, sans-serif;
+  /*height: 300px;
+  width:300px;
+  background-color: blue;
+  padding: 30px;*/
+}
+
+#first_number{
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+  height: 30px;
+  width: 100px;
+  border-color: red;
+}
+
+#second_number{
+  height: 30px;
+  width: 100px;
+  border-color: red;
+}
+
+#clearButton {
+  background-color: green;
+}
