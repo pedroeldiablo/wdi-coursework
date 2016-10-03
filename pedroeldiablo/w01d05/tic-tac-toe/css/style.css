@@ -1,0 +1,58 @@
+.board {
+  width: 500px;
+  height: 500px;
+  border: solid white 1px;
+  background: black;
+  display:inline-block;
+  position : relative;
+  padding: 5px;
+
+
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  border: solid white 1px;
+  display:inline-block;
+  position : relative;
+  padding: 5px;
+  background: grey;
+  font-size: 50px;
+  vertical-align: top;
+}
+
+.x {
+  background: pink;
+  width: 150px;
+  height: 150px;
+  border: solid white 1px;
+  display:inline-block;
+  position : relative;
+  padding: 5px;
+  font-size: :50px;
+  text-align: center;
+  vertical-align: top;
+  line-height: 150px;
+}
+
+.o {
+  background: #DDDDDD;
+  width: 150px;
+  height: 150px;
+  border: solid white 1px;
+  display:inline-block;
+  position : relative;
+  padding: 5px;
+  font: white 50px;
+  vertical-align: top;
+}
+
+div {
+  width: 500px;
+  height: 150px;
+  border: solid black 1px;
+  padding: 5px;
+  vertical-align: top;
+  /*box-shadow: 10px 10px 5px #888888;*/
+}
