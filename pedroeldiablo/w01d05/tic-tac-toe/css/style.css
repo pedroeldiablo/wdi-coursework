@@ -2,18 +2,20 @@
   width: 500px;
   height: 500px;
   border: solid white 1px;
-  background: black;
   display:inline-block;
   position : relative;
   padding: 5px;
 
 
+
 }
 
 .square {
+  margin-left: -4px;
   width: 150px;
   height: 150px;
   border: solid white 1px;
+  border-radius: 10px;
   display:inline-block;
   position : relative;
   padding: 5px;
@@ -23,36 +25,66 @@
 }
 
 .x {
+  margin-left: -4px;
   background: pink;
   width: 150px;
   height: 150px;
   border: solid white 1px;
+  border-radius: 10px;
   display:inline-block;
   position : relative;
   padding: 5px;
-  font-size: :50px;
+  color: white;
+  font-family: Helvetica;
+  font-size: 50px;
   text-align: center;
   vertical-align: top;
   line-height: 150px;
 }
 
+
+
 .o {
+  margin-left: -4px;
   background: #DDDDDD;
   width: 150px;
   height: 150px;
   border: solid white 1px;
+  border-radius: 10px;
   display:inline-block;
   position : relative;
   padding: 5px;
+  color: white;
+  font-family: Helvetica;
+  font-size: 50px;
+  text-align: center;
   font: white 50px;
+  line-height: 150px;
   vertical-align: top;
 }
 
+.field {
+  height: 30px;
+  width: 220px;
+  margin-left: 10%;
+  margin-top: 3px;
+  border-color: pink;
+  border-width: 4px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Helvetica;
+  position:relative;
+}
+
+
 div {
   width: 500px;
-  height: 150px;
+  height: 50px;
   border: solid black 1px;
   padding: 5px;
   vertical-align: top;
+  font-family: Helvetica;
+  font-size: 25px;
+  text-align: center;
   /*box-shadow: 10px 10px 5px #888888;*/
 }

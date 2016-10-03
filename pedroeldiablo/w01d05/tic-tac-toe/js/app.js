@@ -1,41 +1,113 @@
 // Create board. Find array of class "squares". square[0] will be the first square, square[1] second square top row etc.
  // add and extra class? set value ? to 0.
+
+var b = document.querySelectorAll("li");
 var squares= document.getElementsByClassName("square");
 var noTurns = 0;
 
+// document.getElementById("clearButton").addEventListener("click", reset);
+
+// function reset (){
+//   for (i =0; i< b.length; i++){
+//     b[i].setAttribute("class" "squares");
+//     noTurns=0;
+//     document.getElementById("winner").textContent="";
+//   };
+// };
+
+console.log(b);
 
   for (i=0; i< squares.length; i++){
-  squares[i].addEventListener("click", displayDate);
   squares[i].addEventListener("click", assignCharacter);
 }
 
-  function displayDate() {
-    document.getElementById("showWinner").innerHTML = Date();
-};
 
 for (i=0; i< squares.length; i++){
 
   }
 
 function assignCharacter(){
-  if (noTurns%2 === 0){
-      console.log("X");
-      this.innerHTML = "X"
-      noTurns = noTurns + 1;
-      this.setAttribute("class", "x");
-      console.log(squares);
-
-  }else{
+  if (this.className ==="square"){
+    if (noTurns%2 === 0){
+        this.innerHTML = "X"
+        document.getElementById("whoseTurn").textContent="It's O's go.";
         noTurns = noTurns + 1;
-        console.log("O");
-        this.setAttribute("class", "o");
-        this.innerHTML = "0";
+        this.setAttribute("class", "x");
+        checkWinner();
+        console.log(b);
+    }else{
+          noTurns = noTurns + 1;
+          this.setAttribute("class", "o");
+          this.innerHTML = "0";
+          document.getElementById("whoseTurn").textContent="It's X's go.";
+          console.log(b);
+          checkWinner();
+    };
   };
 }
 
+function checkWinner(){
+  winsColumn();
+  winsRow();
+  winsDiagonal1();
+  winsDiagonal2();
+}
 
+function winsRow() {
+      for (var i = 0; i <= 6; i = i + 3) {
+        if (b[i] !== "li.square" && b[i] === b[i ++] && b[i ++] === b[i + 2]) {
+          console.log(b[i], b[i++], b[i+2]);
+          alert = ("winner");
+          document.getElementById("winner").textContent = b[i] + "-won";
+        };
+    };
+}
 
+function winsColumn() {
+  for(var i = 0; i <= 2 ; i++) {
+    if (b[i] !== "li.square" && b[i] === b[i + 3] && b[i + 3] === b[i + 6]) {
+          document.getElementById("winner").innerHTML = b[i] + "-won";
+        };
+    };
+}
 
+function winsDiagonal1() {
+  for(var i = 0; i <=1; i++) {
+    if(b[i] !== "li.square" && b[i] === b[i + 4] === b[i + 8]){
+    document.getElementById("winner").innerHTML = b[i] + "-won";
+    };
+  };
+}
+
+function winsDiagonal2(){
+    for (var i =0; i<=2; i++ ){
+    if (b[i+2] !== "li.square" && b[i +2] === b[i+4] === b[i +8]){
+      document.getElementById("winner").innerHTML = b[i] + "-won";
+    };
+  };
+}
+
+  // }else if {
+//
+//       }else if {
+//         for(var i = 0) {
+//           if(b[i] !== "li.square" && b[i] === b[i + 4] === b[i + 8])||
+//           (b[i] !== "E" && b[i +2] === b[i+4] === b[i +8]) {
+//               this.showWinner = b[i] + "-won";
+//           }
+//         }
+//         else if {
+//           var squares === [] {
+//             document.getElementById("showWinner").innerHTML =" It's a draw!"
+//         }
+//     }
+// }
+//
+//
+//
+// function displayDate() {
+//   document.getElementById("showWinner").innerHTML = Date();
+// };
 
 // .addEventListener("click", displayDate);
 //
