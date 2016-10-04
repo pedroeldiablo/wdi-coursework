@@ -1,38 +1,39 @@
 window.addEventListener("DOMContentLoaded", function(){
-var noises1 =document.getElementById("noises");
-var sources =[];
-var audFiles =[];
+  var noises1 =document.getElementById("noises");
+  var sources =[];
+  var audFiles =[];
+
+  var sounds= document.querySelectorAll("li");
+
+  for (i=0; i< sounds.length; i++){
+    sources.push("../sounds/" + sounds[i].getAttribute('id') + ".wav");
+    audFiles.push(sounds[i].getAttribute('id'));
+    sounds[i].setAttribute("src", sources[i]);
+    sounds[i].addEventListener("click", play);
+  };
+
+  function play(){
+    noises1.src = "../sounds/" + this.getAttribute('id') + ".wav";
+    noises1.play();
+  };
+
+});
+// console.log(sounds);
+
+// console.log(this.id);
+// this.textContent = "playing";
+
 // var example = "/sounds/after.wav";
 
-var sounds= document.querySelectorAll("li");
-  console.log(sounds);
+//   sounds[i].setAttribute("src", "sounds/"+ sounds[i].getAttribute('id') + ".wav");
+// };
 
-for (i=0; i< sounds.length; i++){
-  sources.push("../sounds/" + sounds[i].getAttribute('id') + ".wav");
-  audFiles.push(sounds[i].getAttribute('id'));
-  sounds[i].setAttribute("src", sources[i]);
-  sounds[i].addEventListener("click", play);
-};
-
-console.log(audFiles);
+// console.log(audFiles);
 // console.log(sources);
 
 // for (i=0; i< sounds.length; i++){
 //   console.log(getAttribute("src", "sounds[i]"));
 // };
-
-function play(){
-  noises1.src = sources[i];
-  noises1.play();
-  this.textContent = "playing";
-};
-
-});
-
-//   sounds[i].setAttribute("src", "sounds/"+ sounds[i].getAttribute('id') + ".wav");
-// };
-
-
 
 
 
