@@ -11,7 +11,7 @@ var lizard = document.getElementById("lizard");
 var spock = document.getElementById("spock");
 var status =document.getElementById("status");
 var playerHuman ="";
-var playerAI =["rock", "paper", "scissors"];
+var playerAI =["rock", "paper", "scissors", "spock", "lizard"];
 var playerAIgo ="";
 var buttons= document.querySelectorAll("button");
 
@@ -22,7 +22,7 @@ for (i=0; i< buttons.length; i++){
 function turn(){
   playerHuman = this.getAttribute('id');
   status.textContent= playerHuman;
-  playerAIgo = playerAI[Math.floor(Math.random()*3)];
+  playerAIgo = playerAI[Math.floor(Math.random()*playerAI.length)];
   console.log(playerAIgo);
   checkforwin();
   console.log(hScore);
