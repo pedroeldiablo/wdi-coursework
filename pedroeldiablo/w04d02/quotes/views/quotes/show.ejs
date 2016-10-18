@@ -1,0 +1,7 @@
+<h1>Food: <%= quotes.name %></h1>
+<p><strong>Yumminess:</strong> <%= quote.yumminess %></p>
+<a class="btn" href="/foods/<%= quote.id %>/edit">Edit</a>
+<form method="post" action="/quotes/<%= quote.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input class="btn" type="submit" value="Delete">
+</form>
