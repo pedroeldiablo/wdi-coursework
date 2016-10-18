@@ -18,21 +18,23 @@ const quotesCreate = (req, res) => {
 // SHOW
 const quotesShow = (req, res) => {
   const id = parseInt(req.params.id);
+  console.log("id: ", id);
   const quote = quotes[id];
-  res.render("quotes/show", { quotes });
+  console.log("quote: ", quote);
+  res.render("quotes/show", { quote });
 };
 // EDIT
 const quotesEdit = (req, res) => {
   const id = parseInt(req.params.id);
-  res.render("/edit", { quote: quotes[id] });
+  res.render("quotes/edit", { quote: quotes[id] });
 };
 // UPDATE
 const quotesUpdate = (req, res) => {
   const id = parseInt(req.params.id);
-  let quote = req.body.quotes;
+  let quote = req.body.quote;
   quote.id  = id;
-  quotes[id] = quotes;
-  res.redirect(302, `/${id}`);
+  quotes[id] = quote;
+  res.redirect(302, `/quotes/${id}`);
 };
 // DELETE
 const quotesDelete = (req, res) => {

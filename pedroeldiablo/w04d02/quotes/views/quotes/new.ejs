@@ -1,0 +1,16 @@
+<h1>Add Food</h1>
+<form method="post" action="/quotes">
+  <label for="quote_name">Name</label>
+  <input type="text" name="quote[name]" id="quote_name">
+
+  <label for="quote_yumminess">Yumminess</label>
+  <select name="quote[yumminess]" id="quote_yumminess">
+    <option value="meh">meh</option>
+    <option value="Sure!">Sure!</option>
+    <option value="Depending">Depending...</option>
+    <option value="omg">omg</option>
+    <option value="quite">quite</option>
+  </select>
+
+  <input class="btn" type="submit" value="Add">
+</form>

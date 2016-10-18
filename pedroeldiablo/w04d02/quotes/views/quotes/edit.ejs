@@ -1,0 +1,18 @@
+<h1>Edit Quote</h1>
+<form method="post" action="/quotes/<%= quote.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="quote_name">Name</label>
+  <input type="text" name="quote[name]" id="quote_name" value="<%= quote.name %>">
+
+  <label for="quote_yumminess">Yumminess</label>
+  <select name="quote[yumminess]" id="quote_yumminess" value="<%= quote.yumminess %>">
+    <option value="meh">meh</option>
+    <option value="Sure!">Sure!</option>
+    <option value="Depending">Depending...</option>
+    <option value="omg">omg</option>
+    <option value="quite">quite</option>
+  </select>
+
+  <input class="btn" type="submit" value="Update">
+</form>
