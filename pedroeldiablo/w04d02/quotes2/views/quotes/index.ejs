@@ -1,0 +1,12 @@
+<h1>Index</h1>
+
+<ul class="list-group">
+  <% locals.quotes.forEach((quote) =>{ %>
+    <li class="list-group-item">
+      <a href="quotes/<%= quote.id%>"<h3><%= quote.title %></h3></a>
+      <p>
+        <%= quote.author %><br>
+      </p>
+    </li>
+  <%}) %>
+</ul>

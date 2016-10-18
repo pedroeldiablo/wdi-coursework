@@ -1,0 +1,14 @@
+<h1>Show</h1>
+
+<h2><%= quote.title %></h2>
+<h4><%= quote.author %></h4>
+
+<div class="buttons">
+  <a href="/quotes/<%= quote.id %>/edit" class="btn btn-primary">Edit</a>
+
+  <form action="/quotes/<%= quote.id %>" method="post" class="delete">
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn btn-danger">Delete</button>
+
+  </form>
+</div>

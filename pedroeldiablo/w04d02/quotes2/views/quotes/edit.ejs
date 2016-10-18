@@ -1,0 +1,17 @@
+<h1>Edit</h1>
+
+<form action="/quotes/<%= quote.id %>" method="post">
+  <input type = "hidden" name="_method" value="put">
+
+  <div class="form-group">
+    <label for="quote_title">Title</label>
+    <input type="text" name="quote[title]" id="quote_title" class="form-control" value="<%= quote.title %>">
+  </div>
+
+  <div class="form-group">
+    <label for="quote_author">Author</label>
+    <input type="text" name="quote[author]" id="quote_author" class="form-control" value="<%= quote.author %>">
+  </div>
+
+  <button class="btn btn-primary">Update</button>
+</form>
