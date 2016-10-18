@@ -10,9 +10,9 @@ const quotesNew = (req, res) => {
 };
 // CREATE
 const quotesCreate = (req, res) => {
-  let quote = req.body.quotes;
+  let quote = req.body.quote;
   quote.id = quotes.length;
-  quotes.push(quotes);
+  quotes.push(quote);
   res.redirect(302, "/");
 };
 // SHOW
