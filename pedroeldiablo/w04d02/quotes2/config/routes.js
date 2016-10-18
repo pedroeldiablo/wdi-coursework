@@ -1,17 +1,19 @@
 const router = require('express').Router();
+const quotesController = require('../controllers/quotesControllers');
+let quotes = require("../data/quotes");
+let id = 4;
 
 router.get('/', (req, res) => res.render('index'));
 
-let id = 3;
-const quotes = [{
-  id: 1,
-  title: "And Smith Must Score...",
-  author: "Peter Hayden",
-},{
-  id: 2,
-  title: "The Swiss Army Knife",
-  author: "Peter Hayden",
-}];
+// const quotes = [{
+//   id: 1,
+//   title: "And Smith Must Score...",
+//   author: "Peter Hayden",
+// },{
+//   id: 2,
+//   title: "The Swiss Army Knife",
+//   author: "Peter Hayden",
+// }];
 
 // INDEX?{books} equivalent to {books:books} key value pair
 router.get('/quotes', (req, res) => res.render('quotes/index',{quotes}));
