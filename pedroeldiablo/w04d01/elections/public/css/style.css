@@ -1,0 +1,19 @@
+main {
+  padding-top: 50px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.card img {
+  width: 150px;
+}
+
+.carousel-item {
+  width: 100%;
+}
+
+/*.navbar {
+  font-size: 100px;
+}*/
