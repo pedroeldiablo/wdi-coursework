@@ -1,6 +1,6 @@
 <h1>Dinosaurs</h1>
 
 <% dinosaurs.forEach((dinosaur) => { %>
-  <h2><a href="/dinosaurs/<%= dinosaur.id %>"><%= dinosaur.content %></a></h2>
-  <h3><%= dinosaur.cite %></h3>
+  <h2><a href="/dinosaurs/<%= dinosaur.id %>"><%= dinosaur.name %></a></h2>
+  <h3><%= dinosaur.age %></h3>
 <% }) %>

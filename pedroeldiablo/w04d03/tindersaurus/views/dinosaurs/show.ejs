@@ -1,7 +1,11 @@
-<h1>Show Dinosaur</h1>
+<h1>Your Dino Date</h1><br>
 
-<h2><%= dinosaur.content %></h2>
-<h2><%= dinosaur.cite %></h2>
+<h2>Name: <%= dinosaur.name %></h2><br>
+<h2>Age: <%= dinosaur.age %></h2><br>
+<h2>Species: <%= dinosaur.species %></h2><br>
+<h2>Image:</h2><img src="<%= dinosaur.image %>"><br>
+<h2>Might Eat You? <%= dinosaur.eatsYou %></h2><br>
+<h2>Famous From A Movie? <%= dinosaur.inJurrasicPark %></h2><br>
 
 <a href="/dinosaurs/<%= dinosaur.id %>/edit">Edit</a>
 <form action="/dinosaurs/<%= dinosaur.id %>" method="post">

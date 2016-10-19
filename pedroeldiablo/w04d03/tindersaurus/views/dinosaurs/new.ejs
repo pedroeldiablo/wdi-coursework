@@ -1,11 +1,24 @@
 <h1>New Dinosaur</h1>
 
 <form action="/dinosaurs" method="post">
-  <label for="dinosaur_content">Content</label>
-  <input type="text" name="dinosaur[content]" id="dinosaur_content">
+  
+  <label for="dinosaur_name">Name</label>
+  <input type="text" name="dinosaur[name]" id="dinosaur_name">
 
-  <label for="dinosaur_cite">Citation</label>
-  <input type="text" name="dinosaur[cite]" id="dinosaur_cite">
+  <label for="dinosaur_age">Age</label>
+  <input type="Number" name="dinosaur[age]" id="dinosaur_age">
+
+  <label for="dinosaur_species">Species</label>
+  <input type="text" name="dinosaur[species]" id="dinosaur_species">
+
+  <label for="dinosaur_image">Image</label>
+  <input type="text" name="dinosaur[image]" id="dinosaur_image">
+
+  <label for="dinosaur_eatsYou">Eats You</label>
+  <input type="checkbox" name="dinosaur[eatsYou]" id="dinosaur_eatsYou">
+
+  <label for="dinosaur_inJurrasicPark">In Jurrasic Park</label>
+  <input type="checkbox" name="dinosaur[inJurrasicPark]" id="dinosaur_inJurrasicPark">
 
   <button>Submit</button>
 </form>

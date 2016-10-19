@@ -19,7 +19,7 @@ function dinosaursCreate(req, res) {
 }
 
 function dinosaursShow(req, res) {
-  Quote.findById(req.params.urlId, (err, dinosaur) => {
+  Dinosaur.findById(req.params.urlId, (err, dinosaur) => {
     if(err) return res.status(500).send("500: Server Error");
     res.render('dinosaurs/show', { dinosaur });
   });

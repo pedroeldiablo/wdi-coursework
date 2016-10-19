@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 
 const dinosaurSchema = mongoose.Schema({
-  content: String,
-  cite: String
+  name: String,
+  age: Number,
+  species: String,
+  image: String,
+  eatsYou: Boolean,
+  inJurrasicPark: Boolean
+
 });
 
 module.exports = mongoose.model('Dinosaur', dinosaurSchema);
