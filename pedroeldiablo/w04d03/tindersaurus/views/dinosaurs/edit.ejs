@@ -1,0 +1,13 @@
+<h1>Edit Dinsoaur</h1>
+
+<form action="/dinosaurs/<%= dinosaur.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="dinosaur_content">Content</label>
+  <input type="text" name="dinosaur[content]" id="dinosaur_content" value="<%= dinosaur.content %>">
+
+  <label for="dinosaur_cite">Citation</label>
+  <input type="text" name="dinosaur[cite]" id="dinosaur_cite" value="<%= dinosaur.cite %>">
+
+  <button>Update</button>
+</form>

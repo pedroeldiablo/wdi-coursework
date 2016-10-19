@@ -1,0 +1,10 @@
+<h1>Show Dinosaur</h1>
+
+<h2><%= dinosaur.content %></h2>
+<h2><%= dinosaur.cite %></h2>
+
+<a href="/dinosaurs/<%= dinosaur.id %>/edit">Edit</a>
+<form action="/dinosaurs/<%= dinosaur.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
