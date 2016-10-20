@@ -29,7 +29,7 @@ function usersUpdate(req, res) {
 }
 
 function usersDelete(req, res){
-  User.findByIdAndUpRemove(req.params.id, (err) => {
+  User.findByIdAndRemove(req.params.id, (err) => {
     if(err) return res.status(500).json({error: err});
     res.send(204);
   });
