@@ -45,8 +45,8 @@ mongoose.connect(config.db);
 //   },
 // ];
 
-restaurants.forEach((restaurant) => {
-  Restaurant.create(restaurant, (err, restaurant) => {
-    console.log(`${restaurant.name} was saved.`);
-  });
-});
+// restaurants.forEach((restaurant) => {
+//   Restaurant.create(restaurant, (err, restaurant) => {
+//     console.log(`${restaurant.name} was saved.`);
+//   });
+// });
