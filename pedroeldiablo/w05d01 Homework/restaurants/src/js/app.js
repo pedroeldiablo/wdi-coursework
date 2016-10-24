@@ -1,11 +1,4 @@
-// $(() =>{
-//   console.log("JQuery loaded");
-// });
   var googleMap = googleMap || {};
-
-  // googleMap.getRestaurants = function () {
-  //   $.get("http://localhost:3000/api/restaurants").done((data) => console.log(data.restaurants));
-  // };
 
   googleMap.mapSetup = function () {
     let canvas = document.getElementById("map-canvas");
@@ -32,19 +25,19 @@ googleMap.getRestaurants = function (){
   $.get("http://localhost:3000/api/restaurants").done(this.loopThroughRestaurants);
 };
 
-// googleMap.addInfoWindowForRestaurant = function (restaurant, marker){
-//   google.maps.event.addListener(marker, "click", () => {
-//     if (this.infowindow){
-//       this.infowindow.close();
-//     }
-//     this.infowindow = new google.maps.InfoWindow({
-//       content: `
-//       <p>${restaurant.name}</p>
-//       <p>${restaurant.location}</p>`
-//     });
-//     this.infowindow.open(this.map, marker);
-//   });
-// };
+googleMap.addInfoWindowForRestaurant = function (restaurant, marker){
+  google.maps.event.addListener(marker, "click", () => {
+    if (this.infowindow){
+      this.infowindow.close();
+    }
+    this.infowindow = new google.maps.InfoWindow({
+      content: `
+      <p>${restaurant.name}</p>
+      <img src =${restaurant.image}>`
+    });
+    this.infowindow.open(this.map, marker);
+  });
+};
 
 //
 //
@@ -55,8 +48,8 @@ googleMap.createMarkerForRestaurant = (restaurant) => {
     map: googleMap.map,
     // icon
   });
-  // googleMap.addInfoWindowForRestaurant(restaurant, marker);
+  googleMap.addInfoWindowForRestaurant(restaurant, marker);
 };
 
 
-// $(googleMap.mapSetup.bind(googleMap));
+$(googleMap.mapSetup.bind(googleMap));
