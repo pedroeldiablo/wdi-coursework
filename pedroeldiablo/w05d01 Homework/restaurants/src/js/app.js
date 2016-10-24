@@ -12,6 +12,22 @@
     this.getRestaurants();
   };
 
+  navigator.geolocation.getCurrentPosition((position) => {
+    let latLng = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+    googleMap.map.panTo(latLng);
+    googleMap.map.setZoom(16);
+
+    let marker = new google.maps.Marker({
+      position: latLng,
+      animation: google.maps.Animation.DROP,
+      draggable: true,
+      map: googleMap.map
+    });
+  });
+
   $(googleMap.mapSetup.bind(googleMap));
 
 googleMap.loopThroughRestaurants = (data) => {
@@ -31,9 +47,7 @@ googleMap.addInfoWindowForRestaurant = function (restaurant, marker){
       this.infowindow.close();
     }
     this.infowindow = new google.maps.InfoWindow({
-      content: `
-      <p>${restaurant.name}</p>
-      <img src =${restaurant.image}>`
+      content: `<div class="scrollFix"><img src="${restaurant.image}"><p>${restaurant.name}</p></div>`
     });
     this.infowindow.open(this.map, marker);
   });
