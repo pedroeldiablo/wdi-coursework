@@ -69,48 +69,14 @@ $(function () {
       beforeSend: function beforeSend(jqXHR) {
         if (token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
       }
-    }).done(showPubs).fail(showLoginForm);
+    }).done(showUsers).fail(showLoginForm);
   }
 
-  function getPubs() {
-    if (event) event.preventDefault();
-
-    var token = localStorage.getItem('token');
-    $.ajax({
-      url: '/pubs',
-      method: "GET",
-      beforeSend: function beforeSend(jqXHR) {
-        if (token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
-      }
-    }).done(showPubs)
-    // console.log(data);
-    // showPubs();
-    .fail(showLoginForm);
-  }
-
-  // function showUsers(users) {
-  //   console.log(users);
-  //   let $row = $('<div class="row"></div>');
-  //   users.forEach((user) => {
-  //     $row.append(`
-  //       <div class="col-md-4">
-  //         <div class="card">
-  //           <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">
-  //           <div class="card-block">
-  //             <h4 class="card-title">${user.name}</h4>
-  //           </div>
-  //         </div>
-  //         <button class="btn btn-danger delete" data-id="${user._id}">Delete</button>
-  //         <button class="btn btn-primary edit" data-id="${user._id}">Edit</button>
-  //       </div>
-  //     `);
-  //   });
-
-  function showPubs() {
-    console.log(pubs);
+  function showUsers(users) {
+    console.log(users);
     var $row = $('<div class="row"></div>');
-    pubs.forEach(function (pub) {
-      $row.append('\n        <div class="col-md-4">\n          <div class="card">\n            <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">\n            <div class="card-block">\n              <h4 class="card-title">' + pub.name + '</h4>\n            </div>\n          </div>\n          <button class="btn btn-danger delete" data-id="' + pub._id + '">Delete</button>\n          <button class="btn btn-primary edit" data-id="' + pub._id + '">Edit</button>\n        </div>\n      ');
+    users.forEach(function (user) {
+      $row.append('\n        <div class="col-md-4">\n          <div class="card">\n            <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">\n            <div class="card-block">\n              <h4 class="card-title">' + user.username + '</h4>\n            </div>\n          </div>\n          <button class="btn btn-danger delete" data-id="' + user._id + '">Delete</button>\n          <button class="btn btn-primary edit" data-id="' + user._id + '">Edit</button>\n        </div>\n      ');
     });
 
     $main.html($row);
@@ -148,6 +114,34 @@ $(function () {
     showLoginForm();
   }
 });
+
+function getPubs() {
+  if (event) event.preventDefault();
+
+  var token = localStorage.getItem('token');
+  $.ajax({
+    url: '/pubs',
+    method: "GET",
+    beforeSend: function beforeSend(jqXHR) {
+      if (token) return jqXHR.setRequestHeader('Authorization', 'Bearer ' + token);
+    }
+  }).done(showPubs)
+  // console.log(data);
+  // showPubs();
+  .fail(showLoginForm);
+}
+
+function showPubs(pubs) {
+  console.log(pubs);
+  var $row = $('<div class="row"></div>');
+  pubs.forEach(function (pub) {
+    $row.append('\n        <div class="col-md-4">\n          <div class="card">\n            <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">\n            <div class="card-block">\n              <h4 class="card-title">' + pub.name + '</h4>\n              <h4 class="card-title">' + pub.address + '</h4>\n              <h4 class="card-title">' + pub.rating + '</h4>\n            </div>\n          </div>\n          <button class="btn btn-danger delete" data-id="' + pub._id + '">Delete</button>\n          <button class="btn btn-primary edit" data-id="' + pub._id + '">Edit</button>\n        </div>\n      ');
+  });
+}
+//
+//
+//
+
 
 // $(() =>{
 // //   console.log("JQuery loaded");

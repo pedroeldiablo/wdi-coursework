@@ -104,60 +104,24 @@ $(() =>{
         if(token) return jqXHR.setRequestHeader('Authorization', `Bearer ${token}`);
       }
     })
-    .done(showPubs)
+    .done(showUsers)
     .fail(showLoginForm);
   }
 
-
-  function getPubs() {
-    if(event) event.preventDefault();
-
-    let token = localStorage.getItem('token');
-    $.ajax({
-      url: '/pubs',
-      method: "GET",
-      beforeSend: function(jqXHR) {
-        if(token) return jqXHR.setRequestHeader('Authorization', `Bearer ${token}`);
-      }
-    })
-    .done(showPubs)
-      // console.log(data);
-      // showPubs();
-    .fail(showLoginForm);
-  }
-
-  // function showUsers(users) {
-  //   console.log(users);
-  //   let $row = $('<div class="row"></div>');
-  //   users.forEach((user) => {
-  //     $row.append(`
-  //       <div class="col-md-4">
-  //         <div class="card">
-  //           <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">
-  //           <div class="card-block">
-  //             <h4 class="card-title">${user.name}</h4>
-  //           </div>
-  //         </div>
-  //         <button class="btn btn-danger delete" data-id="${user._id}">Delete</button>
-  //         <button class="btn btn-primary edit" data-id="${user._id}">Edit</button>
-  //       </div>
-  //     `);
-  //   });
-
-  function showPubs() {
-    console.log(pubs);
+  function showUsers(users) {
+    console.log(users);
     let $row = $('<div class="row"></div>');
-    pubs.forEach((pub) => {
+    users.forEach((user) => {
       $row.append(`
         <div class="col-md-4">
           <div class="card">
             <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">
             <div class="card-block">
-              <h4 class="card-title">${pub.name}</h4>
+              <h4 class="card-title">${user.username}</h4>
             </div>
           </div>
-          <button class="btn btn-danger delete" data-id="${pub._id}">Delete</button>
-          <button class="btn btn-primary edit" data-id="${pub._id}">Edit</button>
+          <button class="btn btn-danger delete" data-id="${user._id}">Delete</button>
+          <button class="btn btn-primary edit" data-id="${user._id}">Edit</button>
         </div>
       `);
     });
@@ -200,9 +164,57 @@ $(() =>{
     localStorage.removeItem('token');
     showLoginForm();
   }
+
 });
 
 
+  function getPubs() {
+    if(event) event.preventDefault();
+
+    let token = localStorage.getItem('token');
+    $.ajax({
+      url: '/pubs',
+      method: "GET",
+      beforeSend: function(jqXHR) {
+        if(token) return jqXHR.setRequestHeader('Authorization', `Bearer ${token}`);
+      }
+    })
+    .done(showPubs)
+      // console.log(data);
+      // showPubs();
+    .fail(showLoginForm);
+  }
+
+
+
+
+
+
+  function showPubs(pubs) {
+    console.log(pubs);
+    let $row = $('<div class="row"></div>');
+    pubs.forEach((pub) => {
+      $row.append(`
+        <div class="col-md-4">
+          <div class="card">
+            <img class="card-img-top" src="http://fillmurray.com/300/300" alt="Card image cap">
+            <div class="card-block">
+              <h4 class="card-title">${pub.name}</h4>
+              <h4 class="card-title">${pub.address}</h4>
+              <h4 class="card-title">${pub.rating}</h4>
+            </div>
+          </div>
+          <button class="btn btn-danger delete" data-id="${pub._id}">Delete</button>
+          <button class="btn btn-primary edit" data-id="${pub._id}">Edit</button>
+        </div>
+      `);
+    });
+
+
+  }
+  //
+  //
+  //
 
 
 
