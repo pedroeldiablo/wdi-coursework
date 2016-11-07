@@ -17,6 +17,9 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "supertest": "^2.0.1"
+  },
   "description": ""
 }
