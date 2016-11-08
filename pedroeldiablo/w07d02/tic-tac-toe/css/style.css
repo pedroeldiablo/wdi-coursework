@@ -1,0 +1,13 @@
+ul {
+  width: 600px;
+  margin: auto;
+  padding: 0;
+}
+
+ul li {
+  border: 1px solid;
+  width: 194px;
+  height: 194px;
+  display: inline-block;
+  vertical-align: top;
+}
