@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="criminalsApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Infamous Criminals</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/criminalsController.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>Infamous Criminals</h1>
+  <section ng-controller="CriminalsController as criminals">
+    <ul id="criminals">
+      <li ng-repeat="criminal in criminals.all">
+        <strong>{{criminal.name}}</strong> <em>{{criminal.location}}</em> <span class="status {{criminal.status}}">{{criminal.status}}</span>
+        <button ng-click="criminals.removeCriminal(criminal._id)" class="delete" ng-click="">X</button>
+        <!-- <button ng-click="criminals.editCriminal(criminal._id)" class="edit" ng-click="">Edit</button> -->
+      </li>
+    </ul>
+
+    <form name="criminals.form" class="add-criminal" ng-submit="criminals.addCriminal()" novalidate>
+
+      <div>
+        <label for="new-criminal-name">Name:</label>
+        <input type="text" id="new-criminal-name" ng-model="criminals.newCriminal.name" name="name" required minlength="5" maxlength="25" placeholder="Prof. Moriarty">
+      </div>
+
+      <div ng-messages="criminals.form.name.$error" ng-show="criminals.form.name.$dirty">
+         <p ng-message="required">A name is required</p>
+         <p ng-message="minlength">Name is too short</p>
+         <p ng-message="maxlength">Name is too long</p>
+       </div>
+      <div>
+        <label for="new-criminal-location">Location:</label>
+        <input type="text" id="new-criminal-location" ng-model="criminals.newCriminal.location" name="location" required minlength="5" maxlength="25" placeholder="Reichenbach Falls, CH">
+      </div>
+
+      <div ng-messages="criminals.form.location.$error" ng-show="criminals.form.location.$dirty">
+         <p ng-message="required">A location is required</p>
+         <p ng-message="minlength">Location is too short</p>
+         <p ng-message="maxlength">Location is too long</p>
+       </div>
+
+      <div>
+        <label for="new-criminal-status">Status:</label>
+        <select id="new-criminal-status" ng-model="criminals.newCriminal.status" required>
+          <option value="" disabled>- - Please Select One - -</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown" selected>Unknown</option>
+        </select>
+      </div>
+      <div ng-messages="criminals.form.status.$error" ng-show="criminals.form.status.$dirty">
+         <p ng-message="required">A status is required</p>
+       </div>
+
+      <div>
+        <input type="submit" value="Add Criminal" ng-disabled="criminals.form.$invalid">
+      </div>
+    </form>
+
+  </section>
+
+</body>
+</html>
