@@ -145,6 +145,18 @@ li:hover {
 	padding: 0 0 3px 0px;
 }
 
+.btn-edit {
+	float: right;
+	margin-right: 5px;
+	border-radius: 50%;
+	border: 1px solid #F04A2A;
+	color: #F04A2A;
+	width: 30px;
+	height: 30px;
+	padding: 0 0 3px 0px;
+}
+
+
 .checkbox {
 	margin: 0 10px;
 	outline: none;

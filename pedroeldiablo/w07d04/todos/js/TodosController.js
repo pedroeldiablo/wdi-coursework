@@ -14,7 +14,10 @@ function TodosController(){
     {task: 'take a nap', done: false}
   ];
 
+  self.editMe = {};
+  self.editTodo = editTodo;
   self.addTodo = addTodo;
+  self.updateTodo = updateTodo;
   self.deleteTodo = deleteTodo;
   self.completedTodos = completedTodos;
   self.remainingTodos = remainingTodos;
@@ -44,4 +47,13 @@ function TodosController(){
     });
   }
 
+  function editTodo($index){
+    self.editMe.text = self.todoList[$index].task;
+    self.editMe.index =$index;
+  }
+
+  function updateTodo(){
+    const index = self.editMe.index;
+    self.todoList[index].task = self.editMe.text;
+  }
 }
