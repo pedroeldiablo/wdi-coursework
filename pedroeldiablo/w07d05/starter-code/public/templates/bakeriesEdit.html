@@ -1,0 +1,22 @@
+<section class="row">
+  <form ng-submit="bakeriesEdit.update()">
+    <div class="twelve columns">
+      <label>Bakery</label>
+      <input type="text" name="name" placeholder="Bakery" ng-model="bakeriesEdit.bakery.name" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Location</label>
+      <input type="text" name="location" placeholder="Location" ng-model="bakeriesEdit.bakery.location" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Opened In</label>
+      <input type="text" name="openedDate" placeholder="Founded" ng-model="bakeriesEdit.bakery.openedDate" class="u-full-width">
+    </div>
+    <div class="twelve columns">
+      <label>Sample Pastery</label>
+      <input type="text" name="pasteryImage" placeholder="Pastery" ng-model="bakeriesEdit.bakery.pasteryImage" class="u-full-width">
+    </div>
+
+    <button>Update</button>
+  </form>
+</section>
