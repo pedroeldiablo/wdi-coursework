@@ -40,7 +40,7 @@ function BakeriesShowController(Bakery, $state) {
     });
   }
 
-  bakeriesShow.bakeriesDelete = deleteBakery;
+  bakeriesShow.delete = deleteBakery;
 }
 
 BakeriesEditController.$inject = ['Bakery', '$state'];

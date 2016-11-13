@@ -1,9 +1,9 @@
 <section>
-  <img ng-src="{{ bakeriesShow.bakery.posterImage }}">
+  <img ng-src="{{ bakeriesShow.bakery.pasteryImage }}">
   <h2>{{ bakeriesShow.bakery.name }}</h2>
   <h4>{{ bakeriesShow.bakery.location }}</h4>
   <p>{{ bakeriesShow.bakery.openedDate | date: 'd MMM yyyy' }}</p>
 
-  <a ui-sref="bakeriesEdit({ id: bakeriesShow.bakery._id })">Edit</a>
-  <a ng-click="bakeriesShow.delete()">Delete</a>
+  <button ui-sref="bakeriesEdit({ id: bakeriesShow.bakery._id })">Edit</button>
+  <button ng-click="bakeriesShow.delete()">Delete</button>
 </section>
