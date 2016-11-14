@@ -1,0 +1,12 @@
+<section>
+  <ul class="row">
+    <li ng-repeat="bakery in bakeriesIndex.all" class="four columns">
+      <a ui-sref="bakeriesShow({ id: bakery._id })">
+        <img ng-src="{{ bakery.pasteryImage }}" class="u-max-full-width">
+        <h2>{{ bakery.name }}</h2>
+        <h4>{{ bakery.location }}</h4>
+        <p>{{ bakery.openedDate | date: 'd MMM yyyy' }}</p>
+      </a>
+    </li>
+  </ul>
+</section>

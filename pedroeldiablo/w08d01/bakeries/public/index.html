@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="bakeryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Bakeries</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/satellizer/0.15.5/satellizer.min.js"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/controllers/bakeries.js" charset="utf-8"></script>
+    <script src="/js/controllers/auth.js" charset="utf-8"></script>
+    <script src="/js/controllers/main.js" charset="utf-8"></script>
+    <script src="/js/models/bakery.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <header class="container">
+      <h1>Bakeries</h1>
+      <nav>
+        <ul>
+          <li><a ui-sref="bakeriesIndex" ui-sref-active="active">Bakeries</a></li>
+          <li ng-if="main.isLoggedIn()"><a ui-sref="bakeriesNew" ui-sref-active="active">New Bakeries</a></li>
+          <li ng-if="!main.isLoggedIn()"><a ui-sref="register" ui-sref-active="active"> Register</a></li>
+          <li ng-if="!main.isLoggedIn()"><a ui-sref="login" ui-sref-active="active"> Login</a></li>
+          <li ng-if="main.isLoggedIn()"><a ng-click="main.logout()">Logout</a></li>
+        </ul>
+      </nav>
+      <p ng-if="main.message">{{ main.message}}</p>
+    </header>
+    </header>
+    <main class="container" ui-view>
+    </main>
+  </body>
+</html>
