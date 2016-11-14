@@ -1,0 +1,9 @@
+<section>
+  <img ng-src="{{ filmsShow.film.posterImage }}">
+  <h2>{{ filmsShow.film.title }}</h2>
+  <h4>{{ filmsShow.film.director }}</h4>
+  <p>{{ filmsShow.film.releaseDate | date: 'd MMM yyyy' }}</p>
+
+  <a ng-if="main.isLoggedIn()" ui-sref="filmsEdit({ id: filmsShow.film._id })" class="button">Edit</a>
+  <button ng-if="main.isLoggedIn()" ng-click="filmsShow.delete()">Delete</button>
+</section>

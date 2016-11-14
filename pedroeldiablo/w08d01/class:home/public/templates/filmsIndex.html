@@ -1,0 +1,12 @@
+<section>
+  <ul class="row">
+    <li ng-repeat="film in filmsIndex.all" class="four columns">
+      <a ui-sref="filmsShow({ id: film._id })">
+        <img ng-src="{{ film.posterImage }}" class="u-max-full-width">
+        <h2>{{ film.title }}</h2>
+        <h4>{{ film.director }}</h4>
+        <p>{{ film.releaseDate | date: 'd MMM yyyy' }}</p>
+      </a>
+    </li>
+  </ul>
+</section>
