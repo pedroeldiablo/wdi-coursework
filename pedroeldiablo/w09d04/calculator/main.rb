@@ -1,6 +1,6 @@
 calculating = true
 while calculating do
-  puts "What sum would you like to do? Type +, -, *, /"
+  puts "What sum would you like to do? Type +, -, *, /, power, root"
   answer = gets.chomp
   puts "What is your first number?"
 
@@ -22,6 +22,12 @@ while calculating do
   when "/"
     puts "division"
     puts num1 / num2
+  when "power"
+    puts "#{num1} to the power #{num2}"
+    puts num1 ** num2
+  when "root"
+    puts "root of #{num1}"
+    puts Math.sqrt(num1)
   end
   puts "Do you want to calculate again? (y/n)"
   calculating = gets.chomp == 'y'
