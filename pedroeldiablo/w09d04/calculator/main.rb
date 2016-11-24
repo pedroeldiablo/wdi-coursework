@@ -1,8 +1,8 @@
 calculating = true
 while calculating do
-  puts "What sum would you like to do? Type +, -, *, /, power, root, weight-on-moon, mortgage"
+  puts "What sum would you like to do? Type +, -, *, /, power, root, weight-on-moon, mortgage, stamp"
   answer = gets.chomp
-  if answer ="mortgage"
+  if answer =="mortgage"
     puts "How much do you want to borrow?"
     borrow = gets.to_f
     puts "How long do you want to pay back over in years?"
@@ -23,6 +23,15 @@ while calculating do
     puts fraction
     monthly = borrow * fraction
     puts "£#{monthly}"
+
+  elsif answer == "stamp"
+    puts "How much does your home cost?"
+    value = gets.to_f
+    over250 = value - 250000
+    over125 = value - over250 - 125000
+
+    duty = (over250 * 0.05) + (over125 * 0.02)
+    puts duty
 
   elsif answer == "weight-on-moon"
     puts "How much do you weigh?"
