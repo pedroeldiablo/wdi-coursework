@@ -1,8 +1,20 @@
 calculating = true
 while calculating do
-  puts "What sum would you like to do? Type +, -, *, /, power, root, weight-on-moon, mortgage, stamp"
+  puts "What sum would you like to do? Type +, -, *, /, power, root, weight-on-moon, mortgage, stamp sugar"
   answer = gets.chomp
-  if answer =="mortgage"
+  if answer == "sugar"
+    puts "How much sugar in grams per 100ml?"
+    concentration =gets.to_f
+    puts "How big is your drink in ml?"
+    size = gets.to_f
+    if concentration > 8
+      tax = (24 * size)/1000
+      puts tax
+    else
+      tax = (18 * size)/100
+      puts tax
+    end
+  elsif answer =="mortgage"
     puts "How much do you want to borrow?"
     borrow = gets.to_f
     puts "How long do you want to pay back over in years?"
