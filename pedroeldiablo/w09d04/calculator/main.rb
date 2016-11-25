@@ -10,9 +10,11 @@ while calculating do
     if concentration > 8
       tax = (24 * size)/1000
       puts tax
-    else
+    elsif concentration > 5
       tax = (18 * size)/100
       puts tax
+
+    else puts 0
     end
   elsif answer =="mortgage"
     puts "How much do you want to borrow?"
