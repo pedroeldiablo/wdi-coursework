@@ -7,9 +7,9 @@ require_relative "shelter"
 def menu
   puts `clear`
   puts "*** 🎅 🎄 ✈️  Welcome to #{@shelter.name} ✈️ 🎄 🎅  ***\n\n"
-  puts "1: Add a client"
-  puts "2: Add an animal"
-  puts "3: Donate an animal to a client"
+  puts "1: Add an animal"
+  puts "2: Donate an animal to a client"
+  puts "3: Add a client"
   puts "4: List all the animals"
   puts "Q: Quit \n\n"
   print "--> "
