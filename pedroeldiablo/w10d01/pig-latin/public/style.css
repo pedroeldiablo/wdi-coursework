@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Lobster|Raleway:300');
+
+body {
+  background-color: pink;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: white;
+  word-wrap: break-word;
+}
+
+h1 {
+  text-decoration: overline;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+form {
+  background-color: white;
+  color: pink;
+  align-items: center;
+}
+
+button {
+  float: right;
+  margin-top: 10px;
+  margin-right: 40px;
+  height: 56px;
+  width: 17%;
+  background-color: white;
+  color: pink;
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+  border-radius: 5px;
+}
+
+.translation {
+  text-decoration: none;
+  color: grey;
+}
+
+.english {
+  border-radius: 5px;
+  height: 50px;
+  width: 70%;
+  background-color: white;
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  margin-left: 20px;
+  padding-left: 10px;
+  word-wrap: break-word;
+
+}
+input.english {
+  margin-left:30px;
+}
+
+.english:focus {
+  background: pink;
+}
+
+
+a:active {
+  color: white;
+  transition: 1.5s;
+
+}
