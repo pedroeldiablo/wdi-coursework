@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @script.name %>
+</p>
+
+<p>
+  <strong>Import:</strong>
+  <%= @script.import %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @script.image, width: 100 %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @script.link %>
+</p>
+
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_script_path(@script) %> |
+<% end %>
+<%= link_to 'Back', scripts_path %>
