@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @building.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @building.location %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @building.style %>
+</p>
+
+<p>
+  <strong>Architect:</strong>
+    <% @building.architects.each do |architect| %>
+      <%= architect.name %>
+    <% end %>
+</p>
+
+<p>
+  <strong>Building photo:</strong>
+  <%= image_tag @building.building_photo %>
+</p>
+
+<p>
+  <strong>Date completed:</strong>
+  <%= @building.date_completed %>
+</p>
+
+<p>
+  <strong>Borough:</strong>
+  <%= @building.borough %>
+</p>
+
+<p>
+  <strong>North south east west:</strong>
+  <%= @building.north_south_east_west %>
+</p>
+
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_building_path(@building) %>
+<% end %>|
+<%= link_to 'Back', buildings_path %>

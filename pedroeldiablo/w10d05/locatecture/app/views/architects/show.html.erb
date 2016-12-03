@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @architect.name %>
+</p>
+
+<p>
+  <strong>Practices:</strong>
+  <%= @architect.practices %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @architect.photo %>
+</p>
+
+<% @architect.buildings.each do |building| %>
+  <ul>
+    <li><%= image_tag building.building_photo %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_architect_path(@architect) %> |
+<%= link_to 'Back', architects_path %>

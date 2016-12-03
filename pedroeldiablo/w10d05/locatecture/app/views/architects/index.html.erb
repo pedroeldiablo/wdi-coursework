@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Architects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Practices</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @architects.each do |architect| %>
+      <tr>
+        <td><%= architect.name %></td>
+        <td><%= architect.practices %></td>
+        <td><%= image_tag architect.photo %></td>
+        <td><%= link_to 'Show', architect %></td>
+        <td><%= link_to 'Edit', edit_architect_path(architect) %></td>
+        <td><%= link_to 'Destroy', architect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Architect', new_architect_path %>

@@ -1,0 +1,57 @@
+<%= form_for(building) do |f| %>
+  <% if building.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(building.errors.count, "error") %> prohibited this building from being saved:</h2>
+
+      <ul>
+      <% building.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :style %>
+    <%= f.text_field :style %>
+  </div>
+
+  <div class="field">
+    <%= f.label :architects %>
+    <%= f.collection_check_boxes(:architect_ids, Architect.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building_photo %>
+    <%= f.text_field :building_photo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_completed %>
+    <%= f.text_field :date_completed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :borough %>
+    <%= f.text_field :borough %>
+  </div>
+
+  <div class="field">
+    <%= f.label :north_south_east_west %>
+    <%= f.text_field :north_south_east_west %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

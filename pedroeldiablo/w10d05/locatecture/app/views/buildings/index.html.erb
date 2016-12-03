@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Buildings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Style</th>
+      <th>Architect</th>
+      <th>Building photo</th>
+      <th>Date completed</th>
+      <th>Borough</th>
+      <th>North south east west</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.name %></td>
+        <!-- <td><%= building.location %></td>
+        <td><%= building.style %></td> -->
+        <td>
+          <% building.architects.each do |architect| %>
+            <%= architect.name %>
+          <% end %>
+        </td>
+        <td><%= image_tag building.building_photo %></td>
+        <td><%= building.name %></td>
+        <!-- <td><%= building.date_completed %></td> -->
+        <!-- <td><%= building.borough %></td> -->
+        <!-- <td><%= building.north_south_east_west %></td> -->
+        <td><%= link_to 'Show', building %></td>
+        <% if logged_in? %>
+          <td><%= link_to 'Edit', edit_building_path(building) %></td>
+          <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Building', new_building_path %>

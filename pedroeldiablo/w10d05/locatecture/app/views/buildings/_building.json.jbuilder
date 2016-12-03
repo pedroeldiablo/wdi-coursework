@@ -1,0 +1,2 @@
+json.extract! building, :id, :name, :location, :style, :architect, :building_photo, :date_completed, :borough, :north_south_east_west, :created_at, :updated_at
+json.url building_url(building, format: :json)
