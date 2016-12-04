@@ -1,0 +1,274 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+$light-gray: #f0f0f0;
+$brand-color: #f9f9f9;
+
+body {
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  // background-color: #eee;
+}
+
+a {
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+color: red;
+&:focus {
+  &:hover {
+          opacity: 0.1;
+    }
+  }
+
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.editFormButton {
+  display: inline-block;
+}
+
+$font-size: Helvetica, sans-serif;
+$primary-color: black;
+$text-align: center;
+
+h1 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main {
+  // @include outer-container;
+  padding: 30px 20px 0;
+  min-height: calc(100vh - 50px);
+  word-break: break-all;
+  overflow: scroll;
+  }
+
+header {
+  border-top: 5px solid $brand-color;
+  background-color: white;
+  nav {
+    border-bottom: 5px solid #FFFFFF;
+    height: 50px;
+    // @include outer-container;
+    padding: 0 20px;
+    ul{
+      li {
+        line-height: 50px;
+        display: inline-block;
+        float: right;
+        margin-left: 10px;
+        color: #000000;
+        a {
+          transition: all 0.2s ease;
+          &:hover {
+            opacity: 0.5;
+          }
+          &.active {
+            position:relative;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              bottom: -2px;
+              left: 0;
+              background-color: $brand-color;
+            }
+          }
+        }
+        &.logo {
+          float: left;
+          margin-left: 0;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        &.burger {
+          display: none;
+        }
+      }
+      @media (max-width: 767px) {
+        .dropdown {
+          background-color: white;
+          overflow: hidden;
+          width: 100%;
+          z-index: 100;
+          position: absolute;
+          top: 55px;
+          left: 0;
+          padding: 0 20px;
+          border-top: 1px solid #f9f9f9;
+          li {
+            display: none;
+          }
+          &.active {
+            li {
+              display: block;
+              float: none;
+              text-align: center;
+              &:first-of-type {
+                margin-top: 10px;
+              }
+              &:last-of-type {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+        li {
+          &.burger {
+            display: block;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+// .vertical-center {
+//   position: relative;
+//   @include position(absolute, 50% null null 50%);
+//   transform: translate(-50%, -50%);
+// }
+//
+// .overlay {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(0,0,0,0.5);
+// }
+//
+// .pin-form {
+//   @extend .vertical-center;
+//   background-color: $light-gray;
+//   padding: 20px;
+//   @include span-columns(6);
+//   p {
+//     text-align: center;
+//   }
+//   li {
+//     list-style-type: none;
+//   }
+//   img {
+//     display: block;
+//     margin-bottom: 0.75em;
+//   }
+//   button {
+//     width: 100%;
+//     margin-bottom: 0.75em;
+//     &:last-of-type {
+//       margin-bottom: 0;
+//     }
+//   }
+//   @media (max-width: 767px) {
+//     @include span-columns(10);
+//   }
+//   li {
+//     cursor: pointer;
+//   }
+// }
+//
+//
+// .background-image {
+//   height: calc(100vh - 50px);
+//   width: 100vw;
+//   background-position: center;
+//   background-size: cover;
+//   position: fixed;
+//   top: 50px;
+//   left: 0;
+// }
+//
+// .menu {
+//   @include span-columns(6);
+//   background-color: $light-gray;
+//   padding: 20px;
+//   @extend .vertical-center;
+//   ul {
+//     li {
+//       button {
+//         width: 100%;
+//         margin-bottom: 20px;
+//       }
+//       &:last-of-type {
+//         button {
+//           margin-bottom: 0;
+//         }
+//       }
+//     }
+//   }
+// }
+//
+// .login {
+//   @include span-columns(6);
+//   @media (max-width: 767px) {
+//     @include span-columns(10);
+//   }
+//   background-color: $light-gray;
+//   padding: 20px;
+//   @extend .vertical-center;
+//   .social {
+//     text-align: center;
+//     button {
+//       width: calc(50% - 2px);
+//       padding: 0.7em;
+//       float: left;
+//       &:first-of-type {
+//         margin-right: 4px;
+//       }
+//     }
+//     img {
+//       height: 31px;
+//       cursor: pointer;
+//       transition: all 0.2s ease;
+//       margin-right: 5px;
+//       float: left;
+//       vertical-align: top;
+//       &:hover {
+//         opacity: 0.7;
+//       }
+//     }
+//   }
+//   form {
+//     margin-bottom: 0.75em;
+//     button {
+//       width: 100%;
+//     }
+//   }
+// }
+//
+// .tagline {
+//   color: #6DECAF;
+//   text-align: center;
+//   text-shadow: black;
+//   font-size: 40px;
+//   max-width: 90%;
+//   margin: 50px auto 0;
+//   @media (max-width: 767px) {
+//     display: none;
+//   }
+// }

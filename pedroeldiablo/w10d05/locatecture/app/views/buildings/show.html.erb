@@ -29,7 +29,8 @@
 
 <p>
    <b>Image:</b>
-   <%= image_tag @building.image.url %>
+   <%= link_to image_tag(@building.image.thumb.url), @building.image.url %>
+   <!-- <%= image_tag @building.image.thumb.url %> -->
  </p>
 
 <p>

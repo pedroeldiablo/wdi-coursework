@@ -17,7 +17,9 @@
             <li>Hello, <%= current_user.username %></li>
             <li><%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %></li>
             <li><%= link_to 'Buildings', buildings_path %></li>
+            <li><%= link_to 'New Building', new_building_path %></li>
             <li><%= link_to 'Architects', architects_path %></li>
+            <li><%= link_to 'New Architect', new_architect_path %></li>
           <% else %>
             <li><%= link_to "Register", register_path %></li>
             <li><%= link_to "Login", login_path %></li>
